@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row" >
+      <div class="col-sm-8"><iframe  type="text/html" width="90%" height="353px" [src]='photoURL()'></iframe></div>
+      <div class="col-sm-4">
+          <div style="color: white;font-size: 40px;margin-top: 3.8%;">{{name}}</div>
+          <div style="color: white;font-size: 20px;margin-top: 3.8%;">{{tagline}}</div>
+          <div style="color: white;font-size: 15px;margin-top: 3.8%;">{{year}} &nbsp;|&nbsp;&#9733;{{rate}}&nbsp;|&nbsp;{{length}}</div>
+          <div style="color: white;font-size: 15px;margin-top: 3.8%;">Genres:{{genres}}</div>
+          <div style="color: white;font-size: 15px;margin-top: 3.8%;">Spoken Language:{{language}}</div>
+          <div  style="color: white;font-size: 15px;margin-top: 6%;" id="added"><p>
+            <button class="btn btn-primary" (click)="changeSuccessMessage()">Add to WatchList</button>
+          </p>
+          <ngb-alert #selfClosingAlert *ngIf="successMessage" type="success" (closed)="successMessage = ''">{{successMessage}}
+          </ngb-alert>
+        </div>
+        <div  style="color: white;font-size: 15px;margin-top: 5%;display: none;" id="remove" ><p>
+            <button class="btn btn-primary" (click)="removeSuccessMessage()">Remove from WatchList</button>
+          </p>
+          <ngb-alert #selfClosingAlert *ngIf="removeMessage" type="success" (closed)="removeMessage = ''">{{removeMessage}}
+          </ngb-alert>
+        </div>
+      </div>
+    </div>
+    <div class="row"><p style="font-size: 20px;color: white;margin-left: 1.5%;margin-top:50px">Description</p></div>
+   <div class="row"><p style="font-size: 20px;color: white;margin-left: 1.5%;">{{overview}}</p></div>
+</div>
+
+
+<div class="container" style="width:100%;margin-top:3%;">
+  <div class="row"><p style="font-size: 20px;color: white;margin-left: 1.5%;">Share</p></div>
+  <div class="row">
+    <a href="#" class="fa fa-facebook"></a>
+    <a [href]="twitter" class="fa fa-twitter"></a>
+  </div> 
+</div>
+
+<div class="container" style="width:100%;margin-top:3%;">
+  <div class="row"><p style="font-size: 20px;color: white;margin-left: 1.5%;">Full Cast and Crew</p></div>
+ 
+</div>

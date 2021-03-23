@@ -1,0 +1,8 @@
+<ng-template #rt let-r="result" let-t="term">
+    <img [src]="'https://image.tmdb.org/t/p/w185/' + r['poster_path']" class="mr-1" style="width: 16px">
+    <ngb-highlight [result]="r.title" [term]="t"></ngb-highlight>
+  </ng-template>
+  
+  <input id="typeahead-template" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" [resultTemplate]="rt"
+    [inputFormatter]="formatter" />
+  

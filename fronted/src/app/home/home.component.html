@@ -1,0 +1,42 @@
+<div>
+<ngb-carousel  style="margin-left: 15%;width: 70%;margin-right: 15%;">
+  <ng-template ngbSlide>
+    <div class="img-group" style="width: 100%;">
+     <img class="zoom" [routerLink]="['/watch/movie',id[0]]"  routerLinkActive="router-link-active" [src]="pic[0]" alt="Random first slide" [id]="id[0]" style="width: 100%;height:auto">
+      <div class="img-tip">{{name[0]}}</div>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="img-group" style="width: 100%;">
+     <img class="zoom" [routerLink]="['/watch/movie',id[1]]"  routerLinkActive="router-link-active" [src]="pic[1]" alt="Random first slide" [id]="id[1]" style="width: 100%;height:auto">
+      <div class="img-tip">{{name[1]}}</div>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="img-group" style="width: 100%;">
+     <img class="zoom" [routerLink]="['/watch/movie',id[2]]"  routerLinkActive="router-link-active" [src]="pic[2]" alt="Random first slide" [id]="id[2]" style="width: 100%;height:auto">
+      <div class="img-tip">{{name[2]}}</div>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="img-group" style="width: 100%;">
+     <img class="zoom" [routerLink]="['/watch/movie',id[3]]"  routerLinkActive="router-link-active"  [src]="pic[3]" alt="Random first slide" [id]="id[3]" style="width: 100%;height:auto">
+      <div class="img-tip">{{name[3]}}</div>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="img-group" style="width: 100%;">
+     <img class="zoom" [routerLink]="['/watch/movie',id[4]]"  routerLinkActive="router-link-active" [src]="pic[4]" alt="Random first slide" [id]="id[4]" style="width: 100%;height:auto">
+      <div class="img-tip">{{name[4]}}</div>
+    </div>
+  </ng-template>
+</ngb-carousel>
+</div>
+<div *ngIf="flag else blockif" style="color: white;text-align: center;font-size: 30px;"></div>
+<ng-template  #blockif>
+    <div style="color: white;font-size:30px;text-align: left;font-weight: bolder;margin-left:15%;margin-top:4%">Continue Watching</div>
+    <div *ngFor="let item of list" style='color: white;'>
+        {{item.id}},{{item.title}},{{item.poster_path}}
+    </div>
+</ng-template>
+<app-homeotherparts></app-homeotherparts>
